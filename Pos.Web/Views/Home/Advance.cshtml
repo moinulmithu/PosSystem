@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Advance";
+}
+
+<h2>Item Name : <span data-bind="text: getProductSpec()"></span></h2>
+@section Scripts{
+    <script>
+        function ViewModel(ProductName,Description) {
+            var self = this;
+            self.name = ProductName + ' : ' + Description;
+            self.getProductSpec = function() {
+                return self.name;
+            };
+        };
+
+        var viewModel = new ViewModel('@Model.Name', '@Model.Description');
+        ko.applyBindings(viewModel);
+        
+    </script>
+}

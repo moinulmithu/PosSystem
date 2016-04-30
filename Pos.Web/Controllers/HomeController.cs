@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls.WebParts;
+using Pos.Web.Models;
 
 namespace Pos.Web.Controllers
 {
@@ -25,6 +27,21 @@ namespace Pos.Web.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Basic()
+        {
+            return View();
+        }
+
+        public ActionResult Advance()
+        {
+            var product = new Product()
+            {
+                Name = "Laptop",
+                Description = "HP Probook G4 6th Gen. Core i7"
+            };
+            return View(product);
         }
     }
 }

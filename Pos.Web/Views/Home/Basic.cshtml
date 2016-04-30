@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Basic";
+ }
+
+    <meta name="viewport" content="width=device-width" />
+    <h2>Hello <span data-bind="text : name"></span></h2>
+@section Scripts
+{
+    <script>
+        function ViewModel() {
+            this.name = 'Khaled';
+        }
+
+        var viewModel = new ViewModel();
+        ko.applyBindings(viewModel);
+        
+    </script>
+}
